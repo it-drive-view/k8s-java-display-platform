@@ -1,1 +1,61 @@
-à écrire
+
+1- je build mon image Docker: 
+
+docker build --no-cache -t itdriveview/java-display-console-image .
+
+2- je pousse l'image dans Docker Hub:
+
+docker push itdriveview/java-display-console:latest
+
+3- je crée une configMap de manière impérative (il serait préférable de la créer via une spécification)
+à partir du répertoire 'kubernetes':
+
+kubectl create configmap cm-prod --from-file=./config-platform-prod/application.properties
+kubectl create configmap cm-uat --from-file=./config-platform-uat/application.properties
+
+4- à partir du répertoire 'kubernetes', je crée mes 2 specs de Pod et mes 2 specs de Service:
+
+kubectl apply -k .
+
+
+5- je récupère l'adresse IP de l'un des noeuds du cluster 
+
+kubectl get nodes -o wide 
+==> 192.168.49.2
+
+6- je vérifie les NodePort de mes deux services 
+
+kubectl get svc 
+==> 31001 et 31002 
+
+7- dans un browser, je n'ai plus qu'à faire : 
+
+http://192.168.49.2:31001/display/console
+http://192.168.49.2:31002/display/console
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
