@@ -1,128 +1,49 @@
-17h15
-
-
-
+18h04
 
 un jour tu t'feras casser la gueule, et ça s'ra peut être par moi
+
+mardi 28/02 #1
+- reprendre l'architecture à 5 pods de Lic Jugguery et voir quels sont les ports externes et internes
+
+github qui semble valide ==> à regarder
+https://github.com/shameed1910/springboot-postgres-k8s/blob/master/src/main/resources/postgres-credentials.yml
+
+mardi 28/02 #2
+étudier un de ces tp avec du java+postgres+secret
+https://www.youtube.com/watch?v=vrjoSsiKZaA (prio1 ? semble pas trop mal)
+https://www.youtube.com/watch?v=dpaSYpXuXcA
+https://www.youtube.com/watch?v=EWQIoGIp4y0
+https://www.youtube.com/watch?v=I1OcFX6_09c
+
+mardi 28/03 #2
+- se remettre dans les secret
+
+mardi 28/02 #3
+c'est pas encore très clair dans ce workflow
+https://docs.google.com/document/d/1HmhjYU40mR75veGh9pZSg_Lb7H0DSu27aQg1MrZ-tcM/edit#
+--> quand je dis
+variable d’environnement MONGODB_URL
+--> quand je dis
+volume doit absolument mapper le chemin exact /app/db/mongo_url
+
+
+
+
+
+
+1)
+à revoir : j'ai un service. comment je checke que ce service expose bien ce Pod ?
+(une fois que tout est créé: via un get ? un describe ? )
+==> utiliser par exemple mon appli située dans
+/home/easy/git/mykustomapp/solution/overlays/dev
+
+
 
 ==> demain mercredi :
 le service /git/k8s-java-display-platform-using-kustomization ==> les ports ne sont pas bons et le LoadBalancer : whatsup ?
 
-==> vé"rifier que dans la vidéo de Matthieu
-il n'y a pas de NodePort ou de LoadBalancer
 
-
-
-
-
-
-A FIARE :
-ajoute dans ma doc la ligne
-minikube addons enable ingress
-
-ajouter aussi la correction quand ingress plante
-voir mes favoris internet
-
-4- attendre avec cette commande que l'adresse IP s'affiche au niveau de ma ressource Ingress
-kubectl get ingress --watch
-
-
-=============================================
-questions docker
-=============================================
-
-
-=================================================================
-vidéo 21:10 (nana k8s de 30 minutes)
-la configMap référence comme database_url ==> le nom du service qui expose le pod MongoDB !
-
-=================================================================
-vidéo 26:00 (nana k8s de 30 minutes)
-service LoadBalancer
-on met :  type: LoadBalancer
-nodePort :  8081
-
-=================================================================
-vidéo 27:57 (nana k8s de 30 minutes)
-Le service clusterIp fournit uniquement une adresse IP interne
-Le service LoadBalancer fournit une adresse IP interne, mais aussi une adresse externe
-
-=================================================================
-vidéo 28:36 (nana k8s de 30 minutes)
-si on tape
-minikube service nom-service-load-LoadBalancer
-il ouvre un browser sur l'addresse IP externe du noeud ==> 192.168.64.5:30000
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- faire sur docker
+faire sur docker
 -lancer 2 containers docker : mon appli java et un container bash
 -les mettre sur un réseau et voir si je peux y accéder quand je port-forward un port ou quand je ne le fais pas
 
@@ -171,47 +92,38 @@ Endpoints:                172.17.0.3:8085
 A faire :
 ---------
 
-migrer ce projet
-/home/easy/git/java-for-k8s-json-display-on-console
-vers ce repo github vide :
-it-drive-view/k8s-multi-environnement-kustomize-devops
-
 ==> Matthieu | QUESTION A REPONDRE :
 à quoi sert le port EXPOSE dans le fichier Dockerfile ?
-
-==> Matthieu | QUESTION A REPONDRE :
-quand je crée une configMap, elle se met où dans le cluster ? sur un node Master ?
 
 regarder ce tp sur kustomize :
 https://github.com/kubernetes-sigs/kustomize/blob/master/examples/springboot/README.md
 
 
+=============================================
+questions docker
+=============================================
 
 
+=================================================================
+vidéo 21:10 (nana k8s de 30 minutes)
+la configMap référence comme database_url ==> le nom du service qui expose le pod MongoDB !
 
+=================================================================
+vidéo 26:00 (nana k8s de 30 minutes)
+service LoadBalancer
+on met :  type: LoadBalancer
+nodePort :  8081
 
+=================================================================
+vidéo 27:57 (nana k8s de 30 minutes)
+Le service clusterIp fournit uniquement une adresse IP interne
+Le service LoadBalancer fournit une adresse IP interne, mais aussi une adresse externe
 
-puis faire le même travail avec du kompose
-
-
-
-
-
-
-
-
-
-
-
-
-A FAIRE lUNDI #6
-le tp kustomize (devops journey) , mais avec un fichier properties
-et embarquement de fichiers properties
-avec un jar java dans mes images docker
-
-
-
-
+=================================================================
+vidéo 28:36 (nana k8s de 30 minutes)
+si on tape
+minikube service nom-service-load-LoadBalancer
+il ouvre un browser sur l'addresse IP externe du noeud ==> 192.168.64.5:30000
 
 
 
@@ -243,11 +155,6 @@ https://github.com/devopsjourney1/mykustomapp
 mater ça : registry docker
 https://www.youtube.com/watch?v=2Z1QUPQ_O9M
 
-1)
-à revoir : j'ai un service. comment je checke que ce service expose bien ce Pod ?
-(une fois que tout est créé: via un get ? un describe ? )
-==> utiliser par exemple mon appli située dans
-/home/easy/git/mykustomapp/solution/overlays/dev
 
 2)
 étudier la ressource Ingres ?
