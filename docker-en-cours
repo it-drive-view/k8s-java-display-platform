@@ -1,0 +1,503 @@
+17h15
+
+
+
+
+un jour tu t'feras casser la gueule, et ça s'ra peut être par moi
+
+==> demain mercredi :
+le service /git/k8s-java-display-platform-using-kustomization ==> les ports ne sont pas bons et le LoadBalancer : whatsup ?
+
+==> vé"rifier que dans la vidéo de Matthieu
+il n'y a pas de NodePort ou de LoadBalancer
+
+
+
+
+
+
+A FIARE :
+ajoute dans ma doc la ligne
+minikube addons enable ingress
+
+ajouter aussi la correction quand ingress plante
+voir mes favoris internet
+
+4- attendre avec cette commande que l'adresse IP s'affiche au niveau de ma ressource Ingress
+kubectl get ingress --watch
+
+
+=============================================
+questions docker
+=============================================
+
+
+=================================================================
+vidéo 21:10 (nana k8s de 30 minutes)
+la configMap référence comme database_url ==> le nom du service qui expose le pod MongoDB !
+
+=================================================================
+vidéo 26:00 (nana k8s de 30 minutes)
+service LoadBalancer
+on met :  type: LoadBalancer
+nodePort :  8081
+
+=================================================================
+vidéo 27:57 (nana k8s de 30 minutes)
+Le service clusterIp fournit uniquement une adresse IP interne
+Le service LoadBalancer fournit une adresse IP interne, mais aussi une adresse externe
+
+=================================================================
+vidéo 28:36 (nana k8s de 30 minutes)
+si on tape
+minikube service nom-service-load-LoadBalancer
+il ouvre un browser sur l'addresse IP externe du noeud ==> 192.168.64.5:30000
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ faire sur docker
+-lancer 2 containers docker : mon appli java et un container bash
+-les mettre sur un réseau et voir si je peux y accéder quand je port-forward un port ou quand je ne le fais pas
+
+A faire vendredi #1
+dans mon repo : k8s..using-kustomization
+écrire mon fichier READ-ME.txt
+
+A faire vendredi #2
+dans mon repo : k8s..display-platform
+écrire mon fichier READ-ME.txt
+
+A faire vendredi #3
+repartir de mon repo k8s..display-platform
+et y rajouter un Ingress
+
+A faire vendredi #1
+dans mon repo : k8s..using-kustomization
+
+
+
+
+différence entre
+kubectl exec -ti my-pod --container my-container-1 -- sh
+kubectl exec -ti my-pod --container my-container-1 bash
+et pourquoi il y a deux tirets sur la première ?
+
+à étudier ==>
+super vidéo sur kustomize : https://www.youtube.com/watch?v=LWbbL3jZcgo
+
+super doc également  ==>
+https://antonputra.com/kubernetes/kubernetes-kustomize-tutorial/
+
+--> dans mon drive docker
+créer une image
+
+--> dans mon drive docker
+se connecter à dockerhub et récupérer une image
+
+--> à comprendre la notion de Endpoints
+qaund je fais un
+kubectl get svc nom-service
+je vois ceci :
+Endpoints:                172.17.0.3:8085
+
+
+A faire :
+---------
+
+migrer ce projet
+/home/easy/git/java-for-k8s-json-display-on-console
+vers ce repo github vide :
+it-drive-view/k8s-multi-environnement-kustomize-devops
+
+==> Matthieu | QUESTION A REPONDRE :
+à quoi sert le port EXPOSE dans le fichier Dockerfile ?
+
+==> Matthieu | QUESTION A REPONDRE :
+quand je crée une configMap, elle se met où dans le cluster ? sur un node Master ?
+
+regarder ce tp sur kustomize :
+https://github.com/kubernetes-sigs/kustomize/blob/master/examples/springboot/README.md
+
+
+
+
+
+
+
+puis faire le même travail avec du kompose
+
+
+
+
+
+
+
+
+
+
+
+
+A FAIRE lUNDI #6
+le tp kustomize (devops journey) , mais avec un fichier properties
+et embarquement de fichiers properties
+avec un jar java dans mes images docker
+
+
+
+
+
+
+
+
+question :
+à quoi servent les annotations dans kubernetes ?
+
+question :
+est-ce que le fait de FAIRE
+kubectl kustomize .
+modifie les ressources du cluster ?
+
+
+
+
+
+comprendre ce que sont les annotations
+
+
+
+
+1)
+finir ce tuto
+https://www.youtube.com/watch?v=spCdNeNCuFU
+et voir également son code
+https://github.com/devopsjourney1/mykustomapp
+
+1)
+mater ça : registry docker
+https://www.youtube.com/watch?v=2Z1QUPQ_O9M
+
+1)
+à revoir : j'ai un service. comment je checke que ce service expose bien ce Pod ?
+(une fois que tout est créé: via un get ? un describe ? )
+==> utiliser par exemple mon appli située dans
+/home/easy/git/mykustomapp/solution/overlays/dev
+
+2)
+étudier la ressource Ingres ?
+faire les vidéos Ingres 87-88-89 de Udemy
+
+3)
+bien comprendre la différence entre EXPOSE PORT (qu'on voit dans le fichier Dockerfile)
+et le mapping de port 8080:8080
+
+4)
+travailler un exemple d'appli qui utilise
+- un secret pour une base Mongo de PROD
+- un secret pour une base Mongo de DEV
+
+5)
+reprendre cette partie du drive sur le secret
+https://docs.google.com/document/d/1HmhjYU40mR75veGh9pZSg_Lb7H0DSu27aQg1MrZ-tcM/edit#heading=h.2n8yfpq4wnx
+et refaire un point complet entre
+1-le nom du fichier
+2-la clé
+3-le couple cle/valeur
+
+dans les deux scénarii
+- avec volume
+- avec variable système
+
+6)
+reprendre tout ce paragraphe de mon drive, le relire et voir si rédaction cohérente
+https://docs.google.com/document/d/1Aa6UnfRBG4al6afh4BTbwHHU8F6fiMmvzj5BwVPeoKw/edit#heading=h.cho80obzq891
+
+7)
+mettre en place une stack java simple et deux confifs PROD et UAT
+
+8)
+essayer par l'exemple ce TP : https://kubernetes.io/docs/tasks/access-application-cluster/port-forward-access-application-cluster/
+et faire des meld sur les conf ou les yaml pour voir si y a des différences
+si on fait du port-forwart plutôt sur le service que sur le pods
+==> ça change quelque chose sur le service, étant donné que normalement c'est le Pod qui est forwardé
+(je veux dire.. normalement la conf du service ne devrait pas bouger, qu'on la forwarde ou non... )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A faire:
+
+(docker-compose) tp1
+https://www.baeldung.com/spring-boot-postgresql-docker
+
+(docker-compose) tp2
+https://www.baeldung.com/dockerizing-spring-boot-application
+
+(k8s)
+https://docs.google.com/document/d/1HmhjYU40mR75veGh9pZSg_Lb7H0DSu27aQg1MrZ-tcM/edit#heading=h.krq7u9rs9rk0
+essayer de comprendre comment le container wordpress fait pour se connecter au container de base de données  ?
+==> voir la page docker hub de mysql ?
+
+(docker-compose) à comprendre
+dans ce fichier docker compose
+https://www.bezkoder.com/docker-compose-spring-boot-mysql/
+le container applicatif cible mysqldb
+or je pensais que mysqldb devait être le nm du container mais apparemment non,
+cela peut être le nom du service ==> à vérifier
+
+A faire:
+differences dans le fichier Dockerfile
+COPY et ADD
+
+A faire:
+comment forcer le rebuild de l'image (force la suppression)
+https://serverfault.com/questions/964633/docker-compose-build-no-cache-not-working
+
+
+A faire:
+qu'est ce que mvnw ?
+
+A faire:
+faire une doc drive qui explique l'ordre de travailm du fichier docker compose
+1- build l'image
+2- kancer le contenur postgres
+3- lance le conteneur java
+
+B) pourquoi il me dit
+docker compose up
+PostgreSQL Database directory appears to contain a database; Skipping initialization
+
+C) dans drive: si je mets un  volume dans le ficheir docker compose, il ne se passera rine
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+==> A FAIRE
+essayer de comprendre comment fonctionne le projet de population de données
+dane le projet
+https://github.com/rajeshsgr/postgres-docker-compose
+les items du bas dans le fichier compose
+volumes:
+  pg-data:
+    driver: local
+ne servent à rien
+
+==> refaire un projet spring-boot
+
+==> A FAIRE lundi
+finir ma doc de ce paragraphe
+https://docs.google.com/document/d/15BX_eUVM9J-_fiFASgD3UbkYkLQUAA3zy3IP8TNS9Rc/edit#heading=h.5o1at6wq2mim
+
+==> A FAIRE relire dans le métro
+https://levelup.gitconnected.com/creating-and-filling-a-postgres-db-with-docker-compose-e1607f6f882f
+
+==> A FAIRE réseau bridgé #1
+réapprendr à pinger en DNS un conteneur vers un autre
+
+==> A FAIRE réseau bridgé #2
+créer un 1er conteneur avec postgres
+créer un 2nd conteneur mais juste pour utiliser la commande psql et se connecter au 1er conteneur
+avec quelque chose comme ça :
+docker run --rm -it postgres psql -h <nom-premier-conteneur> -U coussy
+il va donc falloir mettre les deux conteneurs sur le même réseau avec DNS
+
+
+utiliser l'outil meld pour comparer avec la commande inspect
+
+==> A FAIRE
+essayer mettre des mauvais volumes
+par exemple :
+docker run -e POSTGRES_DB=my-db -v postgres-data:/var/lib/postgresql/dataZZZZZZ -d postgres
+apparemment ça fonctionne..
+
+==> A FAIRE
+créer un conteneur sans le démarrer
+
+==> Apprendre à libérer des ports
+apprendre à libérer mes ports, comme 5437, 5438..
+
+==> A FAIRE
+sur un conteneur lancé mais sans volume mappé, essayer de repérer le volume puis connecter un nouveau conteneur dessus
+⇒ juste pour voir si c’est possible et pour comprendre.
+
+==> A FAIRE
+porquoi uniquement avec les bases de données template0 et template1 j'ai ce message :
+psql: database "template0" is not currently accepting connections
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   ├── service.yaml
+│   ├── spec-ingress.yaml
+│   └── spec-ingress.yaml.original
+├── kubernetes
+│   ├── config-platform-prod
+│   │   └── application.properties
+│   ├── config-platform-uat
+│   │   └── application.properties
+│   ├── spec-pod-prod.yaml
+│   ├── spec-pod-uat.yaml
+│   ├── spec-service-prod.yaml
+│   └── spec-service-uat.yaml
+├── overlays
+│   ├── prod
+│   │   ├── application.properties
+│   │   ├── kustomization.yaml
+│   │   └── replicas.yaml
+│   └── uat
+│       ├── application.properties
+│       ├── kustomization.yaml
+│       └── replicas.yaml
+└── README.md
+
+
+
+
+├── base
+│   ├── deployment.yaml
+│   ├── kustomization.yaml
+│   ├── service.yaml
+│   ├── ingress.yaml <============ added template
+├── overlays
+│   ├── prod
+│   │   ├── application.properties
+│   │   ├── kustomization.yaml
+│   └── uat
+│       ├── application.properties
+│       ├── kustomization.yaml
+
+
+failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc: certificate signed by unknown authority
