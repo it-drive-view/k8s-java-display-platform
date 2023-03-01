@@ -1,6 +1,69 @@
-18h04
-
 un jour tu t'feras casser la gueule, et ça s'ra peut être par moi
+
+==> apprendre ce qu'est la commande
+docker tag
+
+==> à faire étudier la commande RUN lors de la construction d'une image docker
+exemple dans un Dockerfile
+FROM.....
+RUN echo....
+
+==> dans mon drive TOUTES COMMANDES DOCKER mettre une doc pour expliquer
+comment on pousse une image dans harbor : expliquer qu'on doit avoir le chemin entier du repo harbor.mgm.grouperci.com/demo:1.0.36b
+==> dans mon drive TOUTES COMMANDES DOCKER même chose pour expliquer comment on pousse une image dans dockerhub
+
+vidéos à regarder sur rancher
+https://www.youtube.com/watch?v=Fk0oMkNS5bU
+https://www.youtube.com/watch?v=xBaxm5ekjto
+https://www.youtube.com/watch?v=XhHo2EDnGR0
+https://www.youtube.com/watch?v=2aYWF6FCBDY
+https://www.youtube.com/watch?v=USS5GOzXwBQ
+
+vidéos à regarder sur argocd
+https://www.youtube.com/watch?v=10_jwOPCkG4
+https://www.youtube.com/watch?v=FV2-eq7TmWc
+https://www.youtube.com/watch?v=JIdOdT3XK0A
+https://www.youtube.com/watch?v=GhAK9GF2Dg4
+https://www.youtube.com/watch?v=MeU5_k9ssrs
+
+mercredi 01/03 #1
+workflow de Mathieu
+- voir où il crée ses fichiers application.properties
+- utilisation de harbor: quoi ? comment ?
+
+regarder cette playlist Kubernetes :
+ https://www.youtube.com/watch?v=OAneNKsVJYE&list=PLCSOT8q0qCLwwl9oDnFp8N_zVZn3RKxJN
+
+regarder cette playlist Docker
+https://www.youtube.com/watch?v=6OZDgAKqsXc&list=PLCSOT8q0qCLy7POE8YWI7_A_s4JRa0fCg
+
+regarder cette playlist Tools
+https://www.youtube.com/watch?v=oH4q7s22j-s&list=PLCSOT8q0qCLy8D-iW8PajuoRknucBwPkT
+
+regarder cette playlist VotingApp
+https://www.youtube.com/watch?v=t5s9YtKJcRk&list=PLCSOT8q0qCLzqTQf12uW-XvtQ9DcLbsjE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 mardi 28/02 #1
 - reprendre l'architecture à 5 pods de Lic Jugguery et voir quels sont les ports externes et internes
@@ -9,11 +72,39 @@ github qui semble valide ==> à regarder
 https://github.com/shameed1910/springboot-postgres-k8s/blob/master/src/main/resources/postgres-credentials.yml
 
 mardi 28/02 #2
-étudier un de ces tp avec du java+postgres+secret
-https://www.youtube.com/watch?v=vrjoSsiKZaA (prio1 ? semble pas trop mal)
-https://www.youtube.com/watch?v=dpaSYpXuXcA
-https://www.youtube.com/watch?v=EWQIoGIp4y0
+
+https://www.youtube.com/watch?v=vrjoSsiKZaA
+--> github
+
+- Postgres oui
+- secret oui
+https://github.com/shameed1910/springboot-postgres-k8s
+
 https://www.youtube.com/watch?v=I1OcFX6_09c
+--> github
+- Postgres oui
+- pas de secret
+- ressources PersistentVolume + PersistentVolumeClaim
+https://github.com/Java-Techie-jt/springboot-crud-k8s
+
+https://www.youtube.com/watch?v=EWQIoGIp4y0
+--> github
+- Secret
+- MySql et pas Postgres
+https://github.com/sivaprasadreddy/springboot-kubernetes-youtube-series/
+
+https://www.youtube.com/watch?v=dpaSYpXuXcA
+--> no github
+
+
+
+
+
+
+
+
+
+
 
 mardi 28/03 #2
 - se remettre dans les secret
