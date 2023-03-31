@@ -1,4 +1,8 @@
 
+--------------------------------------------
+ faire tourner la stack 
+--------------------------------------------
+
 1- je build mon image Docker: 
 
 docker build --no-cache -t itdriveview/java-display-console .
@@ -37,5 +41,11 @@ sinon, dans un browser:
 http://192.168.49.2:31001/display/console
 http://192.168.49.2:31002/display/console
 
+---------------------------------------
+ comprendre le fonctionnement
+---------------------------------------
+
+voir ma doc complète ici: 
+https://docs.google.com/document/d/1yExVXjQFkeEZpudSF-UG3gLJeR1nwMfNPecUlAmjOsc/edit#heading=h.mwqps2irch0d
 
 
